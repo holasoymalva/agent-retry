@@ -25,4 +25,3 @@ private vulnerability reporting flow.
 
 This open source project provides community support on a best-effort basis. No response-time or
 service-level agreement is guaranteed.
-

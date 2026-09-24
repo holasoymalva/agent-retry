@@ -22,4 +22,3 @@
 ## Related issues
 
 <!-- Closes #123 -->
-

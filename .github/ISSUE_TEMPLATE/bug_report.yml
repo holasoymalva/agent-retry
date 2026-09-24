@@ -59,4 +59,3 @@ body:
           required: true
         - label: I removed secrets and sensitive data.
           required: true
-

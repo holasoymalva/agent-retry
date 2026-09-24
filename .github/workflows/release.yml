@@ -51,4 +51,3 @@ jobs:
           DIST_TAG: ${{ inputs.dist_tag }}
       - name: Push package tags
         run: git push --follow-tags
-
