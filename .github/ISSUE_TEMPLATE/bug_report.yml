@@ -1,0 +1,62 @@
+name: Bug report
+description: Report a reproducible problem in Agent Retry
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping improve Agent Retry. Remove secrets and sensitive prompts from all examples.
+  - type: input
+    id: package
+    attributes:
+      label: Affected package
+      placeholder: "@agent-retry/core"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Node.js version, package manager, operating system, and runtime
+      placeholder: "Node.js 22.14.0, pnpm 11.5.0, Ubuntu 24.04"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Provide a repository, code sample, or exact commands.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and logs
+      description: Redact tokens, credentials, prompts, and private source code.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues.
+          required: true
+        - label: I removed secrets and sensitive data.
+          required: true
+
