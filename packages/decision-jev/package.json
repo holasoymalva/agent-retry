@@ -49,7 +49,7 @@
     "clean": "rm -rf dist coverage"
   },
   "dependencies": {
-    "@agent-retry/core": "workspace:*",
+    "agent-retry": "workspace:*",
     "zod": "4.6.5"
   }
 }

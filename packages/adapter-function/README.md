@@ -5,14 +5,14 @@ Wrap any synchronous or asynchronous TypeScript function as an Agent Retry adapt
 ## Install
 
 ```bash
-pnpm add @agent-retry/core @agent-retry/adapter-function
+pnpm add agent-retry @agent-retry/adapter-function
 ```
 
 ## Usage
 
 ```ts
 import { functionAdapter } from "@agent-retry/adapter-function";
-import { withRetry } from "@agent-retry/core";
+import { withRetry } from "agent-retry";
 
 const agent = functionAdapter(async ({ task }) => {
   return `Completed: ${task}`;

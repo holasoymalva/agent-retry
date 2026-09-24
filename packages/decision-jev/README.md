@@ -5,7 +5,7 @@ Optional constrained recovery decisions through a Jev-compatible HTTP endpoint.
 ## Install
 
 ```bash
-pnpm add @agent-retry/core @agent-retry/decision-jev
+pnpm add agent-retry @agent-retry/decision-jev
 ```
 
 ## Usage

@@ -1,4 +1,4 @@
-# `@agent-retry/core`
+# `agent-retry`
 
 Fault-tolerant recovery runtime for AI agents. It turns failures into structured evidence, applies
 bounded policies and budgets, and chooses an explicit recovery action instead of blindly repeating
@@ -7,13 +7,13 @@ the same request.
 ## Install
 
 ```bash
-pnpm add @agent-retry/core
+pnpm add agent-retry
 ```
 
 ## Quick start
 
 ```ts
-import { fakeAgent, withRetry } from "@agent-retry/core";
+import { fakeAgent, withRetry } from "agent-retry";
 
 const agent = fakeAgent([
   { status: "failed", error: new Error("temporary failure") },

@@ -1,5 +1,5 @@
 import { functionAdapter } from "@agent-retry/adapter-function";
-import { withRetry } from "@agent-retry/core";
+import { withRetry } from "agent-retry";
 
 const agent = functionAdapter(async ({ attempt }) => {
   if (attempt === 1) throw new Error("temporary network failure");

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { spawn } from "node:child_process";
-import { type AgentAdapter, type RecoveryContext, withRetry } from "@agent-retry/core";
 import { commandEvaluator } from "@agent-retry/evaluator-command";
+import { type AgentAdapter, type RecoveryContext, withRetry } from "agent-retry";
 import { Command } from "commander";
 
 interface CliOptions {

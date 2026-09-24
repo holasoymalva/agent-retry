@@ -1,6 +1,6 @@
 {
-  "name": "@agent-retry/core",
-  "version": "0.1.0",
+  "name": "agent-retry",
+  "version": "0.1.1",
   "description": "Fault-tolerant recovery runtime for AI agents",
   "keywords": [
     "ai",

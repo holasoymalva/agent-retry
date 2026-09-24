@@ -20,7 +20,7 @@ entry points, executes a recovery example, and invokes the CLI.
 
 ## Pull requests
 
-- Keep provider dependencies outside `@agent-retry/core`.
+- Keep provider dependencies outside `agent-retry`.
 - Add deterministic tests for recovery paths.
 - Preserve bounded execution and fail-closed safety behavior.
 - Avoid logging credentials, prompts, or unbounded command output.

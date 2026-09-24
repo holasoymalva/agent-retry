@@ -6,14 +6,14 @@ The package does not force a provider dependency into the core runtime.
 ## Install
 
 ```bash
-pnpm add @agent-retry/core @agent-retry/adapter-ai-sdk
+pnpm add agent-retry @agent-retry/adapter-ai-sdk
 ```
 
 ## Usage
 
 ```ts
 import { aiSdkAdapter } from "@agent-retry/adapter-ai-sdk";
-import { withRetry } from "@agent-retry/core";
+import { withRetry } from "agent-retry";
 
 const agent = aiSdkAdapter({
   generate: async ({ task }) => ({

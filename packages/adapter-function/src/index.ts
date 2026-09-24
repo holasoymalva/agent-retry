@@ -1,9 +1,4 @@
-import type {
-  AgentAdapter,
-  AgentRunInput,
-  AgentRunResult,
-  SerializedError,
-} from "@agent-retry/core";
+import type { AgentAdapter, AgentRunInput, AgentRunResult, SerializedError } from "agent-retry";
 
 /** Function accepted by the lightweight built-in adapter. */
 export type AgentFunction<TTask, TResult> = (

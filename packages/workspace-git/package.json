@@ -49,6 +49,6 @@
     "clean": "rm -rf dist coverage"
   },
   "dependencies": {
-    "@agent-retry/core": "workspace:*"
+    "agent-retry": "workspace:*"
   }
 }
