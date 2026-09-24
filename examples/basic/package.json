@@ -12,6 +12,6 @@
   },
   "dependencies": {
     "@agent-retry/adapter-function": "workspace:*",
-    "@agent-retry/core": "workspace:*"
+    "agent-retry": "workspace:*"
   }
 }

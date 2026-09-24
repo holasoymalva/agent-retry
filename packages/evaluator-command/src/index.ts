@@ -1,5 +1,5 @@
 import { spawn } from "node:child_process";
-import type { Evaluator, FailureCategory } from "@agent-retry/core";
+import type { Evaluator, FailureCategory } from "agent-retry";
 
 /** Configuration for a shell-free validation command. */
 export interface CommandEvaluatorOptions {

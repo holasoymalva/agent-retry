@@ -74,12 +74,12 @@ pnpm build
 The public API is designed for the following usage after publication:
 
 ```bash
-pnpm add @agent-retry/core @agent-retry/adapter-function
+pnpm add agent-retry @agent-retry/adapter-function
 ```
 
 ```ts
 import { functionAdapter } from "@agent-retry/adapter-function";
-import { withRetry } from "@agent-retry/core";
+import { withRetry } from "agent-retry";
 
 const agent = functionAdapter(async ({ attempt, recoveryContext }) => {
   if (attempt === 1) {
@@ -232,7 +232,7 @@ Read the full [security model](docs/security.md) and [recovery model](docs/recov
 
 | Package | Purpose |
 | --- | --- |
-| [`@agent-retry/core`](packages/core) | Runtime, state machine, budgets, policies, events, evaluators, and built-in strategies |
+| [`agent-retry`](packages/core) | Runtime, state machine, budgets, policies, events, evaluators, and built-in strategies |
 | [`@agent-retry/adapter-function`](packages/adapter-function) | Wrap any TypeScript function as an agent |
 | [`@agent-retry/adapter-ai-sdk`](packages/adapter-ai-sdk) | Provider-neutral adapter for an injected AI SDK generation function |
 | [`@agent-retry/decision-rules`](packages/decision-rules) | Deterministic and hybrid recovery decisions |

@@ -702,7 +702,7 @@ export interface AgentRunResult<TResult> {
 Recommended packages:
 
 ```text
-@agent-retry/core
+agent-retry
 @agent-retry/adapter-function
 @agent-retry/adapter-ai-sdk
 @agent-retry/decision-jev
@@ -1478,7 +1478,7 @@ Target DX:
 import {
   createAgentRetry,
   commandEvaluator,
-} from "@agent-retry/core";
+} from "agent-retry";
 
 import {
   jevDecisionEngine,
@@ -2298,7 +2298,7 @@ Only if a server/API package becomes necessary.
 
 # 53. Core Dependency Philosophy
 
-`@agent-retry/core` should have very few dependencies.
+`agent-retry` should have very few dependencies.
 
 Ideal:
 
@@ -2644,7 +2644,7 @@ npm provenance
 Packages:
 
 ```text
-@agent-retry/core
+agent-retry
 @agent-retry/decision-jev
 ...
 ```

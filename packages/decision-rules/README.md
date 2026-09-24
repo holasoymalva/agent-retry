@@ -5,7 +5,7 @@ Deterministic and hybrid recovery decisions for Agent Retry.
 ## Install
 
 ```bash
-pnpm add @agent-retry/core @agent-retry/decision-rules
+pnpm add agent-retry @agent-retry/decision-rules
 ```
 
 ## Usage

@@ -5,7 +5,7 @@ Safe Git-backed snapshots, diffs, and explicitly enabled rollback support for Ag
 ## Install
 
 ```bash
-pnpm add @agent-retry/core @agent-retry/workspace-git
+pnpm add agent-retry @agent-retry/workspace-git
 ```
 
 ## Usage

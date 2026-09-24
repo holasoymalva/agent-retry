@@ -3,7 +3,7 @@ import type {
   RecoveryDecision,
   RecoveryDecisionEngine,
   RecoveryDecisionInput,
-} from "@agent-retry/core";
+} from "agent-retry";
 
 /** One ordered deterministic recovery rule. */
 export interface RecoveryRule {

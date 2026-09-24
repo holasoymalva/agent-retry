@@ -41,13 +41,13 @@ importers:
       '@agent-retry/adapter-function':
         specifier: workspace:*
         version: link:../../packages/adapter-function
-      '@agent-retry/core':
+      'agent-retry':
         specifier: workspace:*
         version: link:../../packages/core
 
   packages/adapter-ai-sdk:
     dependencies:
-      '@agent-retry/core':
+      'agent-retry':
         specifier: workspace:*
         version: link:../core
       ai:
@@ -56,13 +56,13 @@ importers:
 
   packages/adapter-function:
     dependencies:
-      '@agent-retry/core':
+      'agent-retry':
         specifier: workspace:*
         version: link:../core
 
   packages/cli:
     dependencies:
-      '@agent-retry/core':
+      'agent-retry':
         specifier: workspace:*
         version: link:../core
       '@agent-retry/evaluator-command':
@@ -80,7 +80,7 @@ importers:
 
   packages/decision-jev:
     dependencies:
-      '@agent-retry/core':
+      'agent-retry':
         specifier: workspace:*
         version: link:../core
       zod:
@@ -89,19 +89,19 @@ importers:
 
   packages/decision-rules:
     dependencies:
-      '@agent-retry/core':
+      'agent-retry':
         specifier: workspace:*
         version: link:../core
 
   packages/evaluator-command:
     dependencies:
-      '@agent-retry/core':
+      'agent-retry':
         specifier: workspace:*
         version: link:../core
 
   packages/workspace-git:
     dependencies:
-      '@agent-retry/core':
+      'agent-retry':
         specifier: workspace:*
         version: link:../core
 

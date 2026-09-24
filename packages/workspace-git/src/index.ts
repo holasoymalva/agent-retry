@@ -1,6 +1,6 @@
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
-import type { Workspace, WorkspaceDiff, WorkspaceSnapshot } from "@agent-retry/core";
+import type { Workspace, WorkspaceDiff, WorkspaceSnapshot } from "agent-retry";
 
 const execFileAsync = promisify(execFile);
 

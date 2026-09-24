@@ -87,7 +87,7 @@ try {
 import { aiSdkAdapter } from "@agent-retry/adapter-ai-sdk";
 import { functionAdapter } from "@agent-retry/adapter-function";
 import { createCli } from "@agent-retry/cli";
-import { withRetry } from "@agent-retry/core";
+import { withRetry } from "agent-retry";
 import { jevDecisionEngine } from "@agent-retry/decision-jev";
 import { failure, rulesDecisionEngine } from "@agent-retry/decision-rules";
 import { commandEvaluator } from "@agent-retry/evaluator-command";

@@ -3,7 +3,7 @@ import type {
   RecoveryDecision,
   RecoveryDecisionEngine,
   RecoveryDecisionInput,
-} from "@agent-retry/core";
+} from "agent-retry";
 import { createJevClient, type JevClientOptions } from "./client.js";
 
 export * from "./client.js";

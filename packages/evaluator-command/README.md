@@ -5,7 +5,7 @@ Validate agent outcomes with a shell-free command and return bounded, structured
 ## Install
 
 ```bash
-pnpm add @agent-retry/core @agent-retry/evaluator-command
+pnpm add agent-retry @agent-retry/evaluator-command
 ```
 
 ## Usage

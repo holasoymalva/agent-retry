@@ -1,4 +1,4 @@
-import type { AgentAdapter, AgentRunInput, AgentUsage } from "@agent-retry/core";
+import type { AgentAdapter, AgentRunInput, AgentUsage } from "agent-retry";
 
 /** Minimal AI SDK-compatible generation result, avoiding a core provider dependency. */
 export interface AiSdkResult<TResult = unknown> {
