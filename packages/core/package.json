@@ -2,8 +2,28 @@
   "name": "@agent-retry/core",
   "version": "0.1.0",
   "description": "Fault-tolerant recovery runtime for AI agents",
+  "keywords": [
+    "ai",
+    "agent",
+    "retry",
+    "recovery",
+    "fault-tolerance",
+    "typescript"
+  ],
+  "homepage": "https://github.com/holasoymalva/agent-retry#readme",
+  "bugs": {
+    "url": "https://github.com/holasoymalva/agent-retry/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holasoymalva/agent-retry.git",
+    "directory": "packages/core"
+  },
   "type": "module",
   "license": "Apache-2.0",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -13,6 +33,13 @@
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "build": "tsup src/index.ts --format esm --dts --clean",
     "test": "vitest run",

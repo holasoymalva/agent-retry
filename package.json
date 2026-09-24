@@ -10,11 +10,13 @@
     "build": "turbo run build",
     "test": "turbo run test",
     "test:coverage": "turbo run test:coverage",
-    "lint": "turbo run lint",
+    "lint": "biome check package.json scripts && turbo run lint",
     "typecheck": "turbo run typecheck",
+    "test:pack": "pnpm build && node scripts/test-packed-packages.mjs",
     "clean": "turbo run clean",
     "changeset": "changeset",
-    "release": "changeset publish"
+    "version-packages": "changeset version",
+    "release": "pnpm build && changeset publish"
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.14",
