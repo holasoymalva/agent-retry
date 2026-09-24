@@ -1,8 +1,29 @@
 {
   "name": "@agent-retry/adapter-function",
   "version": "0.1.0",
+  "description": "Adapt any TypeScript function to the Agent Retry runtime",
+  "keywords": [
+    "ai",
+    "agent",
+    "adapter",
+    "retry",
+    "recovery",
+    "typescript"
+  ],
+  "homepage": "https://github.com/holasoymalva/agent-retry#readme",
+  "bugs": {
+    "url": "https://github.com/holasoymalva/agent-retry/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holasoymalva/agent-retry.git",
+    "directory": "packages/adapter-function"
+  },
   "type": "module",
   "license": "Apache-2.0",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -12,6 +33,13 @@
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "build": "tsup src/index.ts --format esm --dts --clean",
     "test": "vitest run",

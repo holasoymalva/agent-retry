@@ -1,8 +1,29 @@
 {
   "name": "@agent-retry/cli",
   "version": "0.1.0",
+  "description": "Command-line interface for bounded AI agent recovery",
+  "keywords": [
+    "ai",
+    "agent",
+    "cli",
+    "codex",
+    "retry",
+    "recovery"
+  ],
+  "homepage": "https://github.com/holasoymalva/agent-retry#readme",
+  "bugs": {
+    "url": "https://github.com/holasoymalva/agent-retry/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holasoymalva/agent-retry.git",
+    "directory": "packages/cli"
+  },
   "type": "module",
   "license": "Apache-2.0",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "bin": {
     "agent-retry": "./dist/index.js"
   },
@@ -15,6 +36,13 @@
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "build": "tsup src/index.ts --format esm --dts --clean",
     "test": "vitest run",
