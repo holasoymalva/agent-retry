@@ -1,0 +1,17 @@
+{
+  "name": "@agent-retry/example-basic",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "test:coverage": "vitest run --coverage --passWithNoTests",
+    "lint": "biome check src",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist coverage"
+  },
+  "dependencies": {
+    "@agent-retry/adapter-function": "workspace:*",
+    "@agent-retry/core": "workspace:*"
+  }
+}

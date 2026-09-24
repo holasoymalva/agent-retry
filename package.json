@@ -1,0 +1,29 @@
+{
+  "name": "agent-retry-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@11.5.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "test:coverage": "turbo run test:coverage",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "clean": "turbo run clean",
+    "changeset": "changeset",
+    "release": "changeset publish"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.14",
+    "@changesets/cli": "^2.29.8",
+    "@types/node": "^24.10.0",
+    "@vitest/coverage-v8": "5.0.1",
+    "tsup": "8.5.1",
+    "turbo": "2.11.3",
+    "typescript": "5.9.3",
+    "vitest": "5.0.1"
+  }
+}
