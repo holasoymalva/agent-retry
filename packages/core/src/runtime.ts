@@ -298,6 +298,7 @@ export class AgentRetryRuntime<TResult = unknown> {
         : undefined;
       const attemptStartedAt = new Date().toISOString();
       let agentResult: AgentRunResult<TResult>;
+      let operationTimedOut = false;
       try {
         const execute = (signal?: AbortSignal) =>
           currentAgent.run({
@@ -309,6 +310,7 @@ export class AgentRetryRuntime<TResult = unknown> {
           });
         agentResult = await runOperation(execute);
       } catch (error) {
+        operationTimedOut = isTimeoutError(error);
         agentResult = {
           status:
             runSignal?.aborted || isTimeoutError(error)
@@ -334,6 +336,7 @@ export class AgentRetryRuntime<TResult = unknown> {
             )
           : { success: agentResult.status === "completed" };
       } catch (error) {
+        operationTimedOut ||= isTimeoutError(error);
         evaluation = {
           success: false,
           failures: [
@@ -378,7 +381,7 @@ export class AgentRetryRuntime<TResult = unknown> {
       }
 
       machine.transition("failed");
-      if (!budget.canAttempt()) {
+      if (operationTimedOut || !budget.canAttempt()) {
         machine.transition("exhausted");
         this.#events.emit("attempt:complete", { runId, attempt });
         await this.#config.hooks?.afterAttempt?.(attempt);
@@ -398,9 +401,11 @@ export class AgentRetryRuntime<TResult = unknown> {
         ...(workspaceSnapshot !== undefined ? { workspace: workspaceSnapshot } : {}),
       };
       let decision: RecoveryDecision;
+      let decisionTimedOut = false;
       try {
         decision = await runOperation(() => decisionEngine.decide(decisionInput));
       } catch (error) {
+        decisionTimedOut = isTimeoutError(error);
         decision = {
           action: "abort",
           confidence: 1,
@@ -451,7 +456,8 @@ export class AgentRetryRuntime<TResult = unknown> {
       await this.#config.hooks?.afterAttempt?.(attempt);
 
       if (decision.action === "abort" || decision.action === "ask_human") {
-        const timedOut = runSignal?.aborted && budget.snapshot().reason === "timeout";
+        const timedOut =
+          decisionTimedOut || (runSignal?.aborted && budget.snapshot().reason === "timeout");
         machine.transition(
           timedOut
             ? "exhausted"
@@ -483,8 +489,9 @@ export class AgentRetryRuntime<TResult = unknown> {
             ...(signal !== undefined ? { signal } : {}),
           }),
         );
-      } catch {
-        const timedOut = runSignal?.aborted && budget.snapshot().reason === "timeout";
+      } catch (error) {
+        const timedOut =
+          isTimeoutError(error) || (runSignal?.aborted && budget.snapshot().reason === "timeout");
         machine.transition(timedOut ? "exhausted" : "aborted");
         return finish(timedOut ? "exhausted" : "aborted");
       }
